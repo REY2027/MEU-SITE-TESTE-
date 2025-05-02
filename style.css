@@ -1,0 +1,166 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    padding: 20px;
+    text-align: center;
+  }
+
+  h1 {
+    margin-bottom: 30px;
+  }
+
+  /* === CARROSSEL === */
+  .carrossel {
+    position: relative;
+    width: 90%;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slide {
+    min-width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .botoes {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+
+  .botoes button {
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+  }
+
+  .botoes button:hover {
+    background-color: rgba(0,0,0,0.7);
+  }
+
+  /* === BOTÃO LOGIN === */
+  .login-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .login-btn:hover {
+    background-color: #0056b3;
+  }
+
+  /* === MODAL === */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .modal-conteudo {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: aparecer 0.4s ease;
+    position: relative;
+  }
+
+  .modal-conteudo h2 {
+    margin-bottom: 20px;
+  }
+
+  .modal-conteudo input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .modal-conteudo button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .modal-conteudo button:hover {
+    background-color: #218838;
+  }
+
+  .fechar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #999;
+    cursor: pointer;
+  }
+
+  .fechar:hover {
+    color: #000;
+  }
+
+  @keyframes aparecer {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  body.dark {
+background-color: #121212;
+color: #f0f0f0;
+}
+
+body.dark .modal-conteudo {
+background-color: #1e1e1e;
+color: #f0f0f0;
+}
+
+body.dark input, 
+body.dark .modal-conteudo input {
+background-color: #2a2a2a;
+color: white;
+border: 1px solid #555;
+}
+
+body.dark .carrossel {
+box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
