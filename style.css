@@ -1,166 +1,145 @@
+/* Reset e base */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
-
-  body {
-    font-family: Arial, sans-serif;
-    background: #f7f7f7;
-    padding: 20px;
-    text-align: center;
-  }
-
-  h1 {
-    margin-bottom: 30px;
-  }
-
-  /* === CARROSSEL === */
-  .carrossel {
-    position: relative;
-    width: 90%;
-    max-width: 700px;
-    margin: 0 auto 50px;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  }
-
-  .slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
-
-  .slide {
-    min-width: 100%;
-    height: 300px;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .botoes {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-  }
-
-  .botoes button {
-    background-color: rgba(0,0,0,0.5);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 18px;
-    border-radius: 5px;
-  }
-
-  .botoes button:hover {
-    background-color: rgba(0,0,0,0.7);
-  }
-
-  /* === BOTÃO LOGIN === */
-  .login-btn {
-    padding: 12px 20px;
-    font-size: 16px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .login-btn:hover {
-    background-color: #0056b3;
-  }
-
-  /* === MODAL === */
-  .modal {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.6);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-
-  .modal-conteudo {
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 400px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    animation: aparecer 0.4s ease;
-    position: relative;
-  }
-
-  .modal-conteudo h2 {
-    margin-bottom: 20px;
-  }
-
-  .modal-conteudo input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-
-  .modal-conteudo button {
-    width: 100%;
-    padding: 12px;
-    background-color: #28a745;
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-  }
-
-  .modal-conteudo button:hover {
-    background-color: #218838;
-  }
-
-  .fechar {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
-    color: #999;
-    cursor: pointer;
-  }
-
-  .fechar:hover {
-    color: #000;
-  }
-
-  @keyframes aparecer {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
+    box-sizing: border-box;
   }
   
-  body.dark {
-background-color: #121212;
-color: #f0f0f0;
-}
+  html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    background-color: #000000;
+  }
 
-body.dark .modal-conteudo {
-background-color: #1e1e1e;
-color: #f0f0f0;
-}
+  .logo-ufo {
+    width: 215px;
+    height: auto;
+  }
 
-body.dark input, 
-body.dark .modal-conteudo input {
-background-color: #2a2a2a;
-color: white;
-border: 1px solid #555;
-}
+  /* Logo acima do header */
+  .logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    animation: flutuar 3s ease-in-out infinite;
+  }
 
-body.dark .carrossel {
-box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
-}
+  /* Animação de flutuação */
+@keyframes flutuar {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Header */
+  header {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  /* Main ocupa o espaço disponível */
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Conteúdo centralizado */
+  .conteudo {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Footer no final da página */
+  footer {
+    background-color: #fff;
+    padding: 15px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+  }   
+
+/* Tela de introdução */
+#intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeOut 2s ease 2s forwards; /* Dura 2s, espera 2s, depois esconde */
+  }
+  
+  .logo {
+    width: 350px;
+    height: auto;
+    animation: zoomIn 2s ease;
+  }
+  
+  /* Animações */
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }  
+
+/* Tela de loading */
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  
+  /* Animação de carregamento */
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 5px solid #ccc;
+    border-top-color: #3498db;
+    border-radius: 50%;
+    animation: girar 1s linear infinite;
+    margin-bottom: 10px;
+  }
+  
+  @keyframes girar {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  

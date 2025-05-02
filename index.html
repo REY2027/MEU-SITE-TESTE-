@@ -1,46 +1,45 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Site com Carrossel e Login Modal</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WORA</title>
+
+  <!-- Link para o CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Site com Carrossel e Modal de Login</h1>
-  <button id="toggleTema" class="login-btn" style="margin-bottom: 30px;">🌙 Tema Escuro</button>
-
-  <!-- === Carrossel === -->
-  <div class="carrossel">
-    <div class="slides" id="slides">
-      <div class="slide" style="background-image: url('https://picsum.photos/id/1011/800/300');"></div>
-      <div class="slide" style="background-image: url('https://picsum.photos/id/1015/800/300');"></div>
-      <div class="slide" style="background-image: url('https://picsum.photos/id/1016/800/300');"></div>
-    </div>
-    <div class="botoes">
-      <button onclick="voltarSlide()">⟨</button>
-      <button onclick="avancarSlide()">⟩</button>
-    </div>
+    <!-- Logo centralizada acima do header -->
+  <div class="logo-container">
+    <img src="imagens/logo-header.png" alt="Disco Voador" class="logo-ufo">
   </div>
 
-  <!-- === Botão de Login === -->
-  <button class="login-btn" onclick="abrirModal()">Fazer Login</button>
-
-  <!-- === Modal === -->
-  <div class="modal" id="modalLogin">
-    <div class="modal-conteudo">
-      <span class="fechar" onclick="fecharModal()">&times;</span>
-      <h2>Login</h2>
-      <form onsubmit="fazerLogin(event)">
-        <input type="text" id="usuario" placeholder="Usuário" required>
-        <input type="password" id="senha" placeholder="Senha" required>
-        <button type="submit">Entrar</button>
-      </form>
-    </div>
+    <!-- Tela de introdução -->
+  <div id="intro">
+    <img src="imagens/logo.png" alt="Minha Logo" class="logo">
   </div>
 
+     <!-- Tela de loading -->
+  <div id="loading">
+    <div class="spinner"></div>
+    <p>Carregando...</p>
+  </div>
+
+  <header>
+    <h1>Bem-vindo ao meu site!</h1>
+  </header>
+
+  <!-- Conteúdo do site -->
+  <main>
+    <p>Este é o conteúdo principal da página.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Weslen de Oliveira Ramos Carvalho</p>
+  </footer>
+
+  <!-- Link para o JavaScript -->
   <script src="script.js"></script>
-  
 </body>
 </html>
